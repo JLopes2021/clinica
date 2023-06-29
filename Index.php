@@ -21,15 +21,39 @@
           <a class="nav-link active" aria-current="page" href="./Index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./novo_usuario.php">Novo Usuário</a>
+          <a class="nav-link" href="? page=novo">Novo Usuário</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="listar_usuario.php">Lista de Usuários</a>
+          <a class="nav-link" href="? page=listar">Lista de Usuários</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col mt-5">
+    <?php 
+    include("./conexao.php");
+switch(@$_REQUEST["page"]){
+  case "novo":
+    include("./novo_usuario.php");
+  break;
+  case "listar":
+    include ("./listar_usuario.php");
+    break;
+    default:
+      print "<h1>Olá, tudo bem?</h1>";
+}
+?>
+
+    </div>
+  </div>
+</div>
+
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
