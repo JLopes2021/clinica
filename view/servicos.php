@@ -8,47 +8,40 @@
 </section>
 <section class="servicos">
 <ul class="list-unstyled">
-  <li class="media">
-    <img src="..." class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Tratamentos Faciais</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li>
-  <li class="media my-4">
-    <img src="..." class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Tratamentos Corporais</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li>
-  <li class="media">
-    <img src="..." class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Estética Corporal</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li>
-  <li class="media">
-    <img src="..." class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Estética Capilar</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li>
-  <li class="media">
-    <img src="..." class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Embelezamento</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li>
-  <li class="media">
-    <img src="..." class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Terapias Relaxantes</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </li>
+<?php 
+// Consulta SQL para selecionar todos os usuários da tabela "usuarios"
+$sql = "SELECT * FROM servicos";
+$res = $conexao->query($sql);
+$qtd = $res->num_rows;
+
+if ($qtd > 0) {
+    // Se houver resultados, exibe-os em uma tabela
+    print "<table class='table table-hover table-striped table-bordered'>";
+    print "<tr>";
+    print "<th>Tratamento</th>";
+    print "<th>O que contém</th>";
+    print "<th>Valor</th>";
+    print "<th>Ações</th>";
+    print "</tr>";
+    
+    // Loop para percorrer cada registro retornado pela consulta
+    while ($row = $res->fetch_object()) {
+        print "<tr>";
+        print "<td>".$row->tratamento_facial.$row->tratamento_corporal.$row->estetica_capilar.$row->embelezamento.$row->terapias_relaxantes."</td>"; // Exibe o nome do tratamento
+        print "<td>".$row->descricao."</td>"; // Exibe a descrição do tratamento
+        print "<td>".'R$ '.$row->valor.',00'."</td>"; // Exibe o valor do tratamento
+        print "<td>
+        <button onclick= \"location.href='?page=editar&id=".$row-> id."';\" class='btn btn-success'>Editar</button> 
+        </td>"; // Botões de editar e excluir, com redirecionamento para as páginas correspondentes
+        
+        print "</tr>";
+    }
+    print"</table>";
+} else {
+    // Caso não haja resultados, exibe uma mensagem de alerta
+    print "<p class='alert alert-danger'>Não encontrou resultados!</p>";
+}
+?>
+ 
 </ul>
 </section>
