@@ -46,6 +46,14 @@ Aqui está um medidor de linguagens utilizado no projeto:
 - PHP: ██████████░░░░░░░░░░░ 70%
 - MySQL: █░░░░░░░░░░░░░░░░░░░ 10%
 
+**Paleta de Cores**
+
+Rosa Claro: #F7C7CD
+Bege: #EED9C4
+Cinza: #CCCCCC
+Branco: #FFFFFF
+Violeta: #A484AC
+
 📝 **Licença**
 
 Este projeto está licenciado sob a licença MIT. Para mais informações, consulte o arquivo [LICENSE](LICENSE).

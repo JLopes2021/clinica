@@ -1,0 +1,27 @@
+.body{
+    background-color: #F7C7CD;
+}
+
+.header{
+    background-color: #CCCCCC;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.header .jumbotron .container h1{
+    color: #A484AC;
+
+}
+.header .jumbotron .container p{
+    color: #000;
+
+}
+.servicos{
+    background-color: #CCCCCC;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 4vh;
+}
