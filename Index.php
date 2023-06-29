@@ -60,8 +60,12 @@
                         break;
                     case "editar":
                         // Inclusão do arquivo de edição de usuário
-                        include("editar_usuario.php");
+                        include("./model/editar_usuario.php");
                         break;
+                        case "marcar":
+                            // Inclusão do arquivo de edição de usuário
+                            include("./model/marcar.php");
+                            break;
                     default:
                         // Página inicial padrão
                         include("./view/pagina_inicial.php");
