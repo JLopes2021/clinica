@@ -79,5 +79,19 @@ switch ($_REQUEST["acao"]) {
         }
 
         break;
+
+        case 'excluir2':
+            $sql = "DELETE FROM servicos WHERE id=".$_REQUEST["id"];
+    
+            $res = $conexao->query($sql);
+            if ($res == true) {
+                print "<script>alert('Excluído com sucesso');</script>";
+                print "<script>location.href=?page=listar';</script>";
+            } else {
+                print "<script>alert('Não foi possível excluir com sucesso');</script>";
+                print "<script>location.href=?page=listar';</script>";
+            }
+    
+            break;
 }
 ?>

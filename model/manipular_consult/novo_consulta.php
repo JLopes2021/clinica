@@ -1,15 +1,28 @@
 <?php
+// Conectar ao banco de dados
+
+// Verificar se a conexão foi estabelecida com sucesso
+if ($conexao->connect_errno) {
+    echo "Falha ao conectar ao banco de dados: " . $conexao->connect_error;
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeProcedimento = $_POST["nome_procedimento"];
     $nomeCliente = $_POST["nome_cliente"];
     $dataProcedimento = $_POST["data_proc"];
 
-
     $sql = "INSERT INTO consultas (nome_procedimento, nome_cliente, data_proc) VALUES ('$nomeProcedimento', '$nomeCliente', '$dataProcedimento')";
 
-    $conexao->close();
+    if ($conexao->query($sql) === true) {
+        echo "Consulta marcada com sucesso!";
+    } else {
+        echo "Erro ao marcar a consulta: " . $conexao->error;
+    }
 }
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h1>Marcar Consulta</h1>
-    <form action="?page=novaconsulta" method="POST">
-        <input type="hidden" name="acao2" value="cadastrar_consulta">
+    <?php 
+    $sql = "SELECT * FROM servicos   WHERE id=".$_REQUEST["id"];
+    $res = $conexao->query($sql);
+    $row = $res->fetch_object();
+    
+    ?>
+    <form action="" method="POST">
+        <input type="hidden" name="acao2">
         <div class="mb-3">
             <label>Nome do Procedimento</label>
-            <input type="text" name="nome_procedimento" class="form-control">
+            <input type="text" name="nome_procedimento" value="<?php echo $row->descrica_nome; ?>" class="form-control">
         </div>
         <div class="mb-3">
             <label>Nome do Cliente</label>
@@ -37,3 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </body>
 </html>
+
+<?php
+// Fechar a conexão com o banco de dados
+$conexao->close();
+?>

@@ -69,6 +69,10 @@
                             // Inclusão do arquivo de edição de usuário
                             include("./model/manipular_consult/lista_consulta.php");
                             break;
+                            case "marcar":
+                                // Inclusão do arquivo de edição de usuário
+                                include("./model/manipular_consult/novo_consulta.php");
+                                break;
                     default:
                         // Página inicial padrão
                         include("./view/pagina_inicial.php");
