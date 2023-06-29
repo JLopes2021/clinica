@@ -32,6 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?page=listar">Lista de Usuários</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=listarC">Listar Consultas</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -48,23 +51,23 @@
                 switch (@$_REQUEST["page"]) {
                     case "novo":
                         // Inclusão do arquivo de criação de novo usuário
-                        include("./model/novo_usuario.php");
+                        include("./model/manipular_usu/novo_usuario.php");
                         break;
                     case "listar":
                         // Inclusão do arquivo de exibição da lista de usuários
-                        include("./view/listar_usuario.php");
+                        include("./view/view_usu/listar_usuario.php");
                         break;
                     case "salvar":
                         // Inclusão do arquivo de salvamento de usuário
-                        include("./model/salvar_usuario.php");
+                        include("./model/manipular_usu/salvar_usuario.php");
                         break;
                     case "editar":
                         // Inclusão do arquivo de edição de usuário
-                        include("./model/editar_usuario.php");
+                        include("./model/manipular_usu/editar_usuario.php");
                         break;
-                        case "marcar":
+                        case "listarC":
                             // Inclusão do arquivo de edição de usuário
-                            include("./model/marcar.php");
+                            include("./model/manipular_consult/lista_consulta.php");
                             break;
                     default:
                         // Página inicial padrão

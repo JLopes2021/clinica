@@ -31,7 +31,7 @@ if ($qtd > 0) {
         print "<td>".$row->descricao."</td>"; // Exibe a descrição do tratamento
         print "<td>".'R$ '.$row->valor.',00'."</td>"; // Exibe o valor do tratamento
         print "<td>
-        <button onclick= \"location.href='?page=marcar&id=".$row-> id."';\" class='btn btn-success'>Editar</button> 
+        <button onclick= \"location.href='?page=novaconsulta&id=".$row-> id."';\" class='btn btn-success'>Editar</button> 
         </td>"; // Botões de editar e excluir, com redirecionamento para as páginas correspondentes
         
         print "</tr>";
