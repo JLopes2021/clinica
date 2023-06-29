@@ -1,7 +1,6 @@
 📄 **Projeto de Cadastro de Usuários**
 
-Este é um projeto simples de cadastro de usuários em PHP, utilizando HTML e CSS para a interface. O objetivo é fornecer uma aplicação web básica para cadastrar, listar e editar usuários em um banco de dados.
-É uma aplicação para estar no consultório, para que a pessoa que estiver ali trabalhando, possa usufruir.
+Este é um projeto simples de cadastro de usuários em PHP, utilizando HTML e CSS para a interface. O objetivo é fornecer uma aplicação web básica para cadastrar, listar e editar usuários em um banco de dados. É uma aplicação para estar no consultório, para que a pessoa que estiver ali trabalhando, possa usufruir.
 
 🚀 **Funcionalidades**
 
@@ -21,7 +20,7 @@ O projeto utiliza as seguintes tecnologias:
 
 📁 **Estrutura de Arquivos**
 
-- `Index.php`: Página inicial do projeto
+- `index.php`: Página inicial do projeto
 - `conexao.php`: Arquivo de configuração e conexão com o banco de dados
 - `novo_usuario.php`: Formulário para cadastrar um novo usuário
 - `listar_usuario.php`: Exibe a lista de usuários cadastrados
@@ -38,14 +37,6 @@ Para executar o projeto localmente, siga as etapas abaixo:
 4. Faça o download dos arquivos do projeto e coloque-os na pasta do servidor web local.
 5. Abra o navegador e acesse o projeto através da URL correspondente ao servidor web local.
 
-📊 **Estatísticas do Projeto**
-
-Aqui está um medidor de linguagens utilizado no projeto:
-
-- HTML: ████░░░░░░░░░░░░░░░░░ 35%
-- CSS: ██████░░░░░░░░░░░░░░░ 50%
-- PHP: ██████████░░░░░░░░░░░ 70%
-- MySQL: █░░░░░░░░░░░░░░░░░░░ 10%
 
 **Paleta de Cores**
 
