@@ -232,3 +232,39 @@ ADD tel VARCHAR(15);
 UPDATE usuarios
 SET tel = CONCAT(FLOOR(RAND() * 89) + 11, LPAD(FLOOR(RAND() * 90000000) + 10000000, 8, '0'))
 WHERE id BETWEEN 1 AND 19;
+
+CREATE TABLE profissionais (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome_profissional VARCHAR(255) NOT NULL,
+    crm VARCHAR(20) NOT NULL,
+    especialidade VARCHAR(255) NOT NULL,
+    servicos VARCHAR(255) NOT NULL,
+    dias_atendimento VARCHAR(255) NOT NULL
+);
+
+INSERT INTO profissionais (id, nome_profissional, crm, especialidade, servicos, dias_atendimento) VALUES
+(1, 'Mariana Silva', '12345', 'Tratamento Facial', 'Limpeza de Pele, Peeling, Máscara Facial', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(2, 'Carolina Santos', '54321', 'Tratamento Corporal', 'Drenagem Linfática, Massagem Modeladora, Endermologia', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(3, 'Ana Oliveira', '98765', 'Estética Capilar', 'Corte, Coloração, Hidratação Capilar', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(4, 'Bruna Costa', '56789', 'Embelezamento', 'Manicure, Pedicure, Design de Sobrancelhas', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(5, 'Rafaela Pereira', '24680', 'Terapias Relaxantes', 'Massagem Relaxante, Reflexologia, Aromaterapia', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(6, 'Laura Mendes', '13579', 'Tratamento Facial', 'Limpeza de Pele, Peeling, Máscara Facial', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(7, 'Juliana Lima', '86420', 'Tratamento Corporal', 'Drenagem Linfática, Massagem Modeladora, Endermologia', 'Segunda, Terça, Quarta, Quinta, Sexta, Sábado'),
+(8, 'Camila Pereira', '75319', 'Estética Capilar', 'Corte, Coloração, Hidratação Capilar', 'Segunda, Terça, Quarta'),
+(9, 'Mariana Castro', '19283', 'Embelezamento', 'Manicure, Pedicure, Design de Sobrancelhas', 'Quinta, Sexta, Sábado'),
+(10, 'Lucas Sousa', '38475', 'Terapias Relaxantes', 'Massagem Relaxante, Reflexologia, Aromaterapia', 'Segunda, Terça, Quarta, Quinta'),
+(11, 'Fernanda Costa', '62735', 'Tratamento Facial', 'Limpeza de Pele, Peeling, Máscara Facial', 'Sexta, Sábado'),
+(12, 'João Fernandes', '98756', 'Tratamento Corporal', 'Drenagem Linfática, Massagem Modeladora, Endermologia', 'Quarta, Quinta, Sexta, Sábado'),
+(13, 'Gustavo Almeida', '56743', 'Estética Capilar', 'Corte, Coloração, Hidratação Capilar', 'Terça, Quarta, Quinta'),
+(14, 'Isabela Santos', '69087', 'Embelezamento', 'Manicure, Pedicure, Design de Sobrancelhas', 'Segunda, Terça, Quarta, Quinta'),
+(15, 'Ricardo Lima', '23894', 'Terapias Relaxantes', 'Massagem Relaxante, Reflexologia, Aromaterapia', 'Quarta, Quinta, Sexta, Sábado'),
+(16, 'Mariana Castro', '92736', 'Tratamento Facial', 'Limpeza de Pele, Peeling, Máscara Facial', 'Segunda, Terça, Quarta, Quinta'),
+(17, 'Paulo Lima', '54321', 'Tratamento Corporal', 'Drenagem Linfática, Massagem Modeladora, Endermologia', 'Segunda, Quarta, Sexta'),
+(18, 'Fernanda Castro', '98765', 'Estética Capilar', 'Corte, Coloração, Hidratação Capilar', 'Terça, Quinta, Sábado'),
+(19, 'Renato Santos', '45678', 'Embelezamento', 'Manicure, Pedicure, Design de Sobrancelhas', 'Segunda, Quarta, Sexta'),
+(20, 'Amanda Oliveira', '90876', 'Terapias Relaxantes', 'Massagem Relaxante, Reflexologia, Aromaterapia', 'Terça, Quinta, Sábado'),
+(21, 'Pedro Fernandes', '56789', 'Tratamento Facial', 'Limpeza de Pele, Peeling, Máscara Facial', 'Segunda, Quarta, Sexta'),
+(22, 'Carla Lima', '34657', 'Tratamento Corporal', 'Drenagem Linfática, Massagem Modeladora, Endermologia', 'Terça, Quinta, Sábado'),
+(23, 'Rafael Mendes', '23984', 'Estética Capilar', 'Corte, Coloração, Hidratação Capilar', 'Segunda, Quarta, Sexta'),
+(24, 'Patrícia Costa', '10293', 'Embelezamento', 'Manicure, Pedicure, Design de Sobrancelhas', 'Terça, Quinta, Sábado'),
+(25, 'Marcelo Almeida', '56723', 'Terapias Relaxantes', 'Massagem Relaxante, Reflexologia, Aromaterapia', 'Segunda, Quarta, Sexta');

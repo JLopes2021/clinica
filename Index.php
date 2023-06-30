@@ -36,6 +36,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="?page=listarC" style="font-size: 16px; color: #333; text-decoration: none;">Listar Consultas</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=listarP" style="font-size: 16px; color: #333; text-decoration: none;">Listar Profissionais</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -72,6 +75,10 @@
                             // Inclusão do arquivo de listagem de consultas
                             include("./model/manipular_consult/lista_consulta.php");
                             break;
+                            case "listarP":
+                                // Inclusão do arquivo de listagem de consultas
+                                include("./view/view_usu/lista_profissionais.php");
+                                break;
                         case "marcar":
                             // Inclusão do arquivo de criação de nova consulta
                             include("./model/manipular_consult/novo_consulta.php");
