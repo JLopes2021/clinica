@@ -1,9 +1,7 @@
 <section class="header">
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
     <h1 class="display-4">Clínica Estética</h1>
     <p class="lead">Bem-vindo à nossa clínica estética, onde o cuidado e a beleza se unem para proporcionar uma experiência única de bem-estar e transformação. Nossa missão é ajudar você a realçar sua beleza natural, promovendo o equilíbrio entre corpo, mente e alma.</p>
-  </div>
 </div>
 </section>
 <section class="servicos">
@@ -45,3 +43,20 @@ if ($qtd > 0) {
  
 </ul>
 </section>
+<div class="aletorio">
+                        <h1>Boas Práticas na Clínica de Estética</h1>
+
+                        <ul>
+                            <li>Profissionalismo</li>
+                            <li>Comunicação efetiva</li>
+                            <li>Higiene e assepsia</li>
+                            <li>Conhecimento atualizado</li>
+                            <li>Empatia e atendimento personalizado</li>
+                            <li>Confidencialidade</li>
+                            <li>Trabalho em equipe</li>
+                            <li>Resolução de problemas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>

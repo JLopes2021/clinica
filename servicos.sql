@@ -209,3 +209,26 @@ UPDATE servicos SET descrica_nome =
     WHEN terapias_relaxantes = 'Meditação Guiada' THEN 'Meditação Guiada'
     ELSE ''
   END;
+
+ALTER TABLE usuarios
+ADD rg VARCHAR(20);
+
+
+UPDATE usuarios
+SET rg = FLOOR(RAND() * 100000000)
+WHERE id BETWEEN 1 AND 19;
+
+ALTER TABLE usuarios
+ADD cpf VARCHAR(25);
+
+
+UPDATE usuarios
+SET cpf = FLOOR(RAND() * 100000000)
+WHERE id BETWEEN 1 AND 19;
+
+ALTER TABLE usuarios
+ADD tel VARCHAR(15);
+
+UPDATE usuarios
+SET tel = CONCAT(FLOOR(RAND() * 89) + 11, LPAD(FLOOR(RAND() * 90000000) + 10000000, 8, '0'))
+WHERE id BETWEEN 1 AND 19;

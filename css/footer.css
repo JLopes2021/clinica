@@ -1,0 +1,19 @@
+.container{
+    position: relative;
+    min-height: 100vh;
+}
+#wrap {
+    padding-bottom: 2.5rem;    /* altura do rodapé */
+  }
+.footer {
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;    
+    background-color: rgb(235, 233, 233);
+    color: rgb(0, 0, 0);
+    text-align: center;
+ }
+
+

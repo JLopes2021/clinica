@@ -2,10 +2,7 @@
 // Conectar ao banco de dados
 
 // Verificar se a conexão foi estabelecida com sucesso
-if ($conexao->connect_errno) {
-    echo "Falha ao conectar ao banco de dados: " . $conexao->connect_error;
-    exit();
-}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeProcedimento = $_POST["nome_procedimento"];
@@ -26,14 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Marcar Consulta</title>
+    <title>Marcar Consulta de cliente já cadastrado</title>
 </head>
 <body>
-    <h1>Marcar Consulta</h1>
+    <h1>Marcar Consulta de cliente já cadastrado</h1>
     <?php 
-    $sql = "SELECT * FROM servicos WHERE id=".$_REQUEST["id"];
-    $res = $conexao->query($sql);
-    $row = $res->fetch_object();
     
     ?>
     <form action="" method="POST">
@@ -46,10 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>Nome do Cliente</label>
             <select name="nome_cliente" class="form-control">
                 <?php
-                $sql2 = "SELECT nome FROM usuarios ORDER BY nome ASC";
-                $result = $conexao->query($sql2);
-                while ($usuario = $result->fetch_assoc()) {
-                    echo "<option value='" . $usuario['nome'] . "'>" . $usuario['nome'] . "</option>";
+                $sql = "SELECT nome_cliente FROM clientes";
+                $result = $conexao->query($sql);
+                while ($cliente = $result->fetch_assoc()) {
+                    echo "<option value='" . $cliente['nome_cliente'] . "'>" . $cliente['nome_cliente'] . "</option>";
                 }
                 ?>
             </select>
