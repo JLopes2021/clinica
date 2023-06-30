@@ -15,31 +15,32 @@
 <body>
 
     <!-- Barra de navegação -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1>Logo aqui</h1>
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Links da barra de navegação -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./Index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?page=novo">Novo Usuário</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?page=listar">Lista de Usuários</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?page=listarC">Listar Consultas</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-family: Arial, sans-serif; background-color: #F7C7CD; box-shadow: 0 2px 4px #F7C7CD;">
+    <h1 style="font-size: 24px; font-weight: bold; margin-right: 20px;">Logo aqui</h1>
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Links da barra de navegação -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./Index.php" style="font-size: 16px; color: #333; text-decoration: none;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=novo" style="font-size: 16px; color: #333; text-decoration: none;">Novo Usuário</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=listar" style="font-size: 16px; color: #333; text-decoration: none;">Lista de Usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=listarC" style="font-size: 16px; color: #333; text-decoration: none;">Listar Consultas</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <div class="container">
         <div id="content">

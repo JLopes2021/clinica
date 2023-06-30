@@ -5,9 +5,12 @@ switch ($_REQUEST["acao"]) {
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $data_nasc = $_POST["data_nasc"];
+        $rg = $_POST["rg"]; 
+        $cpf = $_POST["cpf"];
+        $tel = $_POST["tel"];
 
-        $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc) VALUES (
-            '{$nome}','{$email}','{$senha}','{$data_nasc}')";
+        $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, rg, cpf, tel) VALUES (
+            '{$nome}','{$email}','{$senha}','{$data_nasc}','{$rg}','{$cpf}','{$tel}')";
 
         $res = $conexao->query($sql);
 
@@ -48,9 +51,9 @@ switch ($_REQUEST["acao"]) {
 
         $sql = "UPDATE usuarios SET 
             nome='{$nome}',
-            nome='{$email}',
-            nome='{$senha}',
-            nome='{$data_nasc}' 
+            email='{$email}',
+            senha='{$senha}',
+            data_nasc='{$data_nasc}' 
             WHERE 
                 id=".$_REQUEST["id"];
         
