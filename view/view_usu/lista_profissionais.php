@@ -4,19 +4,30 @@
     <title>Lista de Profissionais</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-    .card {
-    background-color: #F7C7CD;
+.card {
+    background: linear-gradient(45deg, #F7C7CD, #E99DA5);
     color: white;
+    border: 1px solid black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateX(0deg);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: perspective(1000px) rotateX(-5deg);
 }
 
 .card-title {
     font-size: 18px;
     font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    
 }
 
 .card p {
     font-size: 14px;
     color: black;
+    
 }
 
 .card, .h-100 {
@@ -55,7 +66,7 @@
                 $nome = $_POST['nome'];
 
                 // Realizar a consulta ao banco de dados com os parâmetros de filtragem
-                $sql = "SELECT * FROM profissionais WHERE especialidade LIKE '%$especialidade%' AND nome_profissional LIKE '%$nome%'";
+                $sql = "SELECT * FROM profissionais WHERE especialidade LIKE '%$especialidade%' AND nome_profissional LIKE '%$nome%' ORDER BY nome_profissional ASC";
             } else {
                 // Consulta padrão sem filtros
                 $sql = "SELECT * FROM profissionais";
