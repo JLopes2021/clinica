@@ -38,7 +38,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Lista de Profissionais</h1>
+    <h1 style="color: #F7C7CD; font-size: 10vmin; font-weight: bold; text-shadow: 2px 2px 4px #000;">Profissionais Disponíveis</h1>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="especialidade">Especialidade:</label>

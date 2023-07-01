@@ -1,3 +1,5 @@
+<h1 style="color: #F7C7CD; font-size: 10vmin; font-weight: bold; text-shadow: 2px 2px 4px #000;">Consultas Marcadas</h1>
+
 <?php
 $sql2 = "SELECT * FROM consultas";
 $res = $conexao->query($sql2);
