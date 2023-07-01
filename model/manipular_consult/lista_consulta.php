@@ -10,6 +10,7 @@ if ($qtd > 0) {
     echo "<th>Nome</th>";
     echo "<th>Procedimento</th>";
     echo "<th>Data de Procedimento</th>";
+    echo "<th>Nome Profissional</th>";
     echo "<th>Ações</th>";
     echo "</tr>";
 
@@ -18,7 +19,8 @@ if ($qtd > 0) {
         echo "<tr>";
         echo "<td>".$row->nome_cliente."</td>"; // Exibe o nome do usuário
         echo "<td>".$row->nome_procedimento."</td>"; // Exibe o procedimento
-        echo "<td>".date('d-m-Y', strtotime($row->data_proc))."</td>"; // Exibe a data de procedimento no formato dd-mm-yyyy
+        echo "<td>".date('d/m/Y', strtotime($row->data_proc))."</td>"; // Exibe a data de procedimento no formato dd-mm-yyyy
+        echo "<td>".$row->nome_profissional."</td>"; // Exibe o procedimento
         echo "<td>";
         // Formulário para exclusão da consulta
         echo "<form method='post'>";
