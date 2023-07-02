@@ -61,11 +61,11 @@
     <li>Violeta: #A484AC</li>
   </ul>
 
-  <h2>💾 Banco de Dados</h2
+  <h2>💾 Banco de Dados</h2>
 
->
+  <p>Você pode utilizar o MySQL como banco de dados para esse
 
-  <p>Você pode utilizar o MySQL como banco de dados para esse projeto. O arquivo <code>database.sql</code> contém o script para criar a tabela "usuarios" com as colunas necessárias.</p>
+ projeto. O arquivo <code>database.sql</code> contém o script para criar a tabela "usuarios" com as colunas necessárias.</p>
 
   <h2>📝 Licença</h2>
 
