@@ -1,100 +1,101 @@
-<?php 
-switch ($_REQUEST["acao"]) {
-    case 'cadastrar':
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $senha = $_POST["senha"];
-        $data_nasc = $_POST["data_nasc"];
-        $rg = $_POST["rg"]; 
-        $cpf = $_POST["cpf"];
-        $tel = $_POST["tel"];
+<?php
+if (isset($_REQUEST["acao"])) {
+    switch ($_REQUEST["acao"]) {
+        case 'cadastrar':
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $senha = $_POST["senha"];
+            $data_nasc = $_POST["data_nasc"];
+            $rg = $_POST["rg"];
+            $cpf = $_POST["cpf"];
+            $tel = $_POST["tel"];
 
-        $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, rg, cpf, tel) VALUES (
-            '{$nome}','{$email}','{$senha}','{$data_nasc}','{$rg}','{$cpf}','{$tel}')";
+            $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, rg, cpf, tel) VALUES (
+                '{$nome}', '{$email}', '{$senha}', '{$data_nasc}', '{$rg}', '{$cpf}', '{$tel}')";
 
-        $res = $conexao->query($sql);
+            $res = $conexao->query($sql);
 
-        if ($res == true) {
-            print "<script>alert('Cadastrado com sucesso');</script>";
-            print "<script>location.href=?page=listar';</script>";
-        } else {
-            print "<script>alert('Não foi possível cadastrar');</script>";
-            print "<script>location.href=?page=listar';</script>";
-        }
-        break;
+            if ($res) {
+                echo "<script>alert('Cadastrado com sucesso');</script>";
+                echo "<script>location.href='?page=listar';</script>";
+            } else {
+                echo "<script>alert('Não foi possível cadastrar');</script>";
+                echo "<script>location.href='?page=listar';</script>";
+            }
+            break;
 
         case 'cadastrar_consulta':
             $nome = $_POST["nome"];
             $email = $_POST["email"];
             $senha = $_POST["senha"];
             $data_nasc = $_POST["data_nasc"];
-    
-            $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc) VALUES (
-                '{$nome}','{$email}','{$senha}','{$data_nasc}')";
-    
+
+            $sql = "INSERT INTO consultas (nome, email, senha, data_nasc) VALUES (
+                '{$nome}', '{$email}', '{$senha}', '{$data_nasc}')";
+
             $res = $conexao->query($sql);
-    
-            if ($res == true) {
-                print "<script>alert('Cadastrado com sucesso');</script>";
-                print "<script>location.href=?page=listar';</script>";
+
+            if ($res) {
+                echo "<script>alert('Consulta cadastrada com sucesso');</script>";
+                echo "<script>location.href='?page=listar';</script>";
             } else {
-                print "<script>alert('Não foi possível cadastrar');</script>";
-                print "<script>location.href=?page=listar';</script>";
+                echo "<script>alert('Não foi possível cadastrar a consulta');</script>";
+                echo "<script>location.href='?page=listar';</script>";
             }
             break;
 
-    case 'editar':
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $senha = md5($_POST["senha"]); // A senha é tratada com md5 antes de ser armazenada
-        $data_nasc = $_POST["data_nasc"];
+        case 'editar':
+            $id = $_POST["id"];
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $senha = $_POST["senha"];
+            $data_nasc = $_POST["data_nasc"];
 
-        $sql = "UPDATE usuarios SET 
-            nome='{$nome}',
-            email='{$email}',
-            senha='{$senha}',
-            data_nasc='{$data_nasc}' 
-            WHERE 
-                id=".$_REQUEST["id"];
-        
-        $res = $conexao->query($sql);
+            $sql = "UPDATE usuarios SET 
+                nome = '{$nome}',
+                email = '{$email}',
+                senha = '{$senha}',
+                data_nasc = '{$data_nasc}'
+                WHERE id = {$id}";
 
-        if ($res == true) {
-            print "<script>alert('Editado com sucesso');</script>";
-            print "<script>location.href=?page=listar';</script>";
-        } else {
-            print "<script>alert('Não foi possível Editar');</script>";
-            print "<script>location.href=?page=listar';</script>";
-        }
+            $res = $conexao->query($sql);
 
-        break;
+            if ($res) {
+                echo "<script>alert('Usuário editado com sucesso');</script>";
+                echo "<script>location.href='?page=listar';</script>";
+            } else {
+                echo "<script>alert('Não foi possível editar o usuário');</script>";
+                echo "<script>location.href='?page=listar';</script>";
+            }
+            break;
 
-    case 'excluir':
-        $sql = "DELETE FROM usuarios WHERE id=".$_REQUEST["id"];
+        case 'excluir':
+            $id = $_REQUEST["id"];
+            $sql = "DELETE FROM usuarios WHERE id = {$id}";
 
-        $res = $conexao->query($sql);
-        if ($res == true) {
-            print "<script>alert('Excluído com sucesso');</script>";
-            print "<script>location.href=?page=listar';</script>";
-        } else {
-            print "<script>alert('Não foi possível excluir com sucesso');</script>";
-            print "<script>location.href=?page=listar';</script>";
-        }
-
-        break;
+            $res = $conexao->query($sql);
+            if ($res) {
+                echo "<script>alert('Usuário excluído com sucesso');</script>";
+                echo "<script>location.href='?page=listar';</script>";
+            } else {
+                echo "<script>alert('Não foi possível excluir o usuário');</script>";
+                echo "<script>location.href='?page=listar';</script>";
+            }
+            break;
 
         case 'excluir2':
-            $sql = "DELETE FROM servicos WHERE id=".$_REQUEST["id"];
-    
+            $id = $_REQUEST["id"];
+            $sql = "DELETE FROM servicos WHERE id = {$id}";
+
             $res = $conexao->query($sql);
-            if ($res == true) {
-                print "<script>alert('Excluído com sucesso');</script>";
-                print "<script>location.href=?page=listar';</script>";
+            if ($res) {
+                echo "<script>alert('Serviço excluído com sucesso');</script>";
+                echo "<script>location.href='?page=listar';</script>";
             } else {
-                print "<script>alert('Não foi possível excluir com sucesso');</script>";
-                print "<script>location.href=?page=listar';</script>";
+                echo "<script>alert('Não foi possível excluir o serviço');</script>";
+                echo "<script>location.href='?page=listar';</script>";
             }
-    
             break;
+    }
 }
 ?>

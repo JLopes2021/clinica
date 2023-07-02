@@ -18,22 +18,21 @@
         <input type="date" name="data_nasc" class="form-control" required> <!-- Campo para inserir a data de nascimento do usuário -->
     </div>
     <div class="mb-3">
-    <label>RG</label>
-    <input type="number" name="rg" class="form-control" pattern="[0-9]{1,12}" title="Digite apenas números e no máximo 12 caracteres" required> <!-- Campo para inserir o RG do usuário -->
-</div>
-
-     <div class="mb-3">
+        <label>RG</label>
+        <input type="number" name="rg" class="form-control" pattern="[0-9]{1,12}" title="Digite apenas números e no máximo 12 caracteres" required> <!-- Campo para inserir o RG do usuário -->
+    </div>
+    <div class="mb-3">
         <label>CPF</label>
-        <input type="number" name="cpf" class="form-control" pattern="[0-9]{1,12}" maxlength="12" size="12" title="Digite apenas números e não deixe vazio" required> <!-- Campo para inserir a data de nascimento do usuário -->
+        <input type="number" name="cpf" class="form-control" pattern="[0-9]{1,12}" maxlength="12" size="12" title="Digite apenas números e não deixe vazio" required> <!-- Campo para inserir o CPF do usuário -->
     </div>
     <div class="mb-3">
         <label>Telefone</label>
-        <input type="number" name="tel" class="form-control"> <!-- Campo para inserir a data de nascimento do usuário -->
+        <input type="number" name="tel" class="form-control"> <!-- Campo para inserir o telefone do usuário -->
     </div>
     <div class="mb-3">
         <button type="submit" class="btn btn-secondary">Enviar</button> <!-- Botão de envio do formulário -->
     </div>
     <div>
-        <h4>Cadastro</h4>
+        <h4>Cadastro</h4> <!-- Título opcional para o formulário -->
     </div>
 </form>

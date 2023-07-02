@@ -4,41 +4,39 @@
     <title>Lista de Profissionais</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-.card {
-    background: linear-gradient(45deg, #F7C7CD, #E99DA5);
-    color: white;
-    border: 1px solid black;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transform: perspective(1000px) rotateX(0deg);
-    transition: transform 0.3s ease;
-}
+        .card {
+            background: linear-gradient(45deg, #F7C7CD, #E99DA5);
+            color: white;
+            border: 1px solid black;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+        }
 
-.card:hover {
-    transform: perspective(1000px) rotateX(-5deg);
-}
+        .card:hover {
+            transform: perspective(1000px) rotateX(-5deg);
+        }
 
-.card-title {
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px #000;
-    
-}
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000;
+        }
 
-.card p {
-    font-size: 14px;
-    color: black;
-    
-}
+        .card p {
+            font-size: 14px;
+            color: black;
+        }
 
-.card, .h-100 {
-    height: 100%;
-}
-
+        .card,
+        .h-100 {
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-    <h1 style="color: #F7C7CD; font-size: 10vmin; font-weight: bold; text-shadow: 2px 2px 4px #000;">Profissionais Disponíveis</h1>
+        <h1 style="color: #F7C7CD; font-size: 10vmin; font-weight: bold; text-shadow: 2px 2px 4px #000;">Profissionais Disponíveis</h1>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="especialidade">Especialidade:</label>
@@ -102,8 +100,6 @@
             $conexao->close();
             ?>
         </div>
-        <h1>Profissionais Disponíveis</h1>
-        <p>Conexões</p>
     </div>
 </body>
 </html>
